@@ -1,13 +1,3 @@
-# from cassandra.cluster import Cluster
-# from cassandra.io.asyncorereactor import AsyncoreConnection as DefaultConnection
-
-# cluster = Cluster(['127.0.0.1'], port=9042)
-# session = cluster.connect("mercadolibre_test")
-
-# rows = session.execute('SELECT * FROM producto;')
-# for producto_row in rows:
-#   print(producto_row)
-
 
 from cassandra.cluster import Cluster
 from cassandra.query import dict_factory
@@ -103,31 +93,7 @@ def leer_clientes(session):
     for row in rows:
         print(row)
 
-# def actualizar_cliente(session):
-#     cliente_id = input("Ingrese el ID del cliente a actualizar: ")
-#     nombre = input("Ingrese el nuevo nombre (dejar en blanco para no cambiar): ")
-#     telefono = input("Ingrese el nuevo teléfono (dejar en blanco para no cambiar): ")
-#     email = input("Ingrese el nuevo email (dejar en blanco para no cambiar): ")
-    
-#     update_parts = []
-#     params = [uuid.UUID(cliente_id)]
-    
-#     if nombre:
-#         update_parts.append("nombre = %s")
-#         params.append(nombre)
-#     if telefono:
-#         update_parts.append("telefono = %s")
-#         params.append(telefono)
-#     if email:
-#         update_parts.append("email = %s")
-#         params.append(email)
-    
-#     if update_parts:
-#         query = f"UPDATE clientes SET {', '.join(update_parts)} WHERE cliente_id = %s"
-#         session.execute(query, params)
-#         print("Cliente actualizado exitosamente.")
-#     else:
-#         print("No se realizaron cambios.")
+
 
 def actualizar_cliente(session):
     cliente_id = input("Ingrese el ID del cliente a actualizar: ")
