@@ -181,22 +181,6 @@ def leer_pedidos(session):
     for row in rows:
         print(row)
 
-# def actualizar_pedido(session):
-#     pedido_id = input("Ingrese el ID del pedido a actualizar: ")
-#     productos = {}
-#     while True:
-#         producto_id = input("Ingrese el ID del producto a actualizar (o 'fin' para terminar): ")
-#         if producto_id.lower() == 'fin':
-#             break
-#         cantidad = int(input("Ingrese la nueva cantidad: "))
-#         productos[uuid.UUID(producto_id)] = cantidad
-    
-#     if productos:
-#         query = "UPDATE pedidos SET productos = productos + %s WHERE pedido_id = %s"
-#         session.execute(query, [productos, uuid.UUID(pedido_id)])
-#         print("Pedido actualizado exitosamente.")
-#     else:
-#         print("No se realizaron cambios.")
 
 def actualizar_pedido(session):
     pedido_id = input("Ingrese el ID del pedido a actualizar: ")
